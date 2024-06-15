@@ -1,4 +1,4 @@
-﻿namespace PageTurners.Models;
+﻿namespace PageTurners.Models.Models;
 
 public class ErrorViewModel
 {

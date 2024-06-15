@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using PageTurners.Models;
+using PageTurners.Models.Models;
 
-namespace PageTurners.Controllers;
+namespace PageTurners.Models.Controllers;
 
 public class HomeController : Controller
 {

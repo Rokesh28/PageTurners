@@ -5,6 +5,12 @@ VisualStudioVersion = 25.0.1706.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageTurners", "PageTurners\PageTurners.csproj", "{A14486F7-0F88-42FD-9725-E4AEEF8D8E10}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageTurners.Models", "PageTurners.Model\PageTurners.Models.csproj", "{0644727C-1B78-4DAC-9B12-15269FA92045}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageTurners.DataAccess", "PageTurners.DataAccess\PageTurners.DataAccess.csproj", "{8D588FA2-12D1-4B66-9E0F-22026F9ED972}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageTurners.Utility", "PageTurners.Utility\PageTurners.Utility.csproj", "{45DB4259-079E-43F8-87B0-41ED923642B2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{A14486F7-0F88-42FD-9725-E4AEEF8D8E10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A14486F7-0F88-42FD-9725-E4AEEF8D8E10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A14486F7-0F88-42FD-9725-E4AEEF8D8E10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0644727C-1B78-4DAC-9B12-15269FA92045}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0644727C-1B78-4DAC-9B12-15269FA92045}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0644727C-1B78-4DAC-9B12-15269FA92045}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0644727C-1B78-4DAC-9B12-15269FA92045}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D588FA2-12D1-4B66-9E0F-22026F9ED972}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D588FA2-12D1-4B66-9E0F-22026F9ED972}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D588FA2-12D1-4B66-9E0F-22026F9ED972}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D588FA2-12D1-4B66-9E0F-22026F9ED972}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45DB4259-079E-43F8-87B0-41ED923642B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45DB4259-079E-43F8-87B0-41ED923642B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45DB4259-079E-43F8-87B0-41ED923642B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45DB4259-079E-43F8-87B0-41ED923642B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
