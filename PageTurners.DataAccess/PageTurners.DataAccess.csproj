@@ -26,6 +26,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PageTurners.Utility\PageTurners.Utility.csproj" />
-    <ProjectReference Include="..\PageTurners.Model\PageTurners.Models.csproj" />
+    <ProjectReference Include="..\PageTurners.Models\PageTurners.Models.csproj" />
   </ItemGroup>
 </Project>

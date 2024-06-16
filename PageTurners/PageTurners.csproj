@@ -30,7 +30,7 @@
     <ProjectReference Include="..\PageTurners.Utility\PageTurners.Utility.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
-    <ProjectReference Include="..\PageTurners.Model\PageTurners.Models.csproj">
+    <ProjectReference Include="..\PageTurners.Models\PageTurners.Models.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
   </ItemGroup>
