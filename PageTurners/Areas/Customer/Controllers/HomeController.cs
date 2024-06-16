@@ -2,8 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using PageTurners.Models;
 
-namespace PageTurners.Areas.Admin.Controllers;
-
+namespace PageTurners.Areas.Customer.Controllers;
+[Area("Customer")]
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
