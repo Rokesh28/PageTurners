@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using PageTurners.DataAccess.Data;
 using PageTurners.DataAccess.Repository.IRepository;
 using PageTurners.Models;
 
@@ -12,12 +11,12 @@ using PageTurners.Models;
 namespace PageTurners.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class CategoryController : Controller
+    public class ProductController : Controller
     {
-        
+        // GET: /<controller>/
         private readonly IUnitOfWork _unitOfWork;
 
-        public CategoryController(IUnitOfWork unitOfWork)
+        public ProductController(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
@@ -25,23 +24,23 @@ namespace PageTurners.Areas.Admin.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            List<Category> categories = _unitOfWork.Category.GetAll().ToList();
+            List<Product> categories = _unitOfWork.Product.GetAll().ToList();
             return View(categories);
         }
 
-        public IActionResult CreateOrEdit(int? id=0)
+        public IActionResult CreateOrEdit(int? id = 0)
         {
             if (id == 0)
-            { return View(new Category()); }
+            { return View(new Product()); }
             else
             {
-                Category category = _unitOfWork.Category.Get(u => u.Id == id);
-                return View(category);
+                Product product = _unitOfWork.Product.Get(u => u.Id == id);
+                return View(product);
             }
-            
+
         }
         [HttpPost]
-        public IActionResult CreateOrEdit(Category obj)
+        public IActionResult CreateOrEdit(Product obj)
         {
             //if (obj.Name == obj.DisplayOrder.ToString())
             //{
@@ -51,16 +50,18 @@ namespace PageTurners.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 if (obj.Id == 0)
-                { _unitOfWork.Category.Add(obj);
-                  _unitOfWork.Save();
-                  TempData["success"] = "Category created successfully";
+                {
+                    _unitOfWork.Product.Add(obj);
+                    _unitOfWork.Save();
+                    TempData["success"] = "Product created successfully";
                 }
                 else
-                { _unitOfWork.Category.Update(obj);
-                  _unitOfWork.Save();
-                  TempData["success"] = "Category Edited successfully";
+                {
+                    _unitOfWork.Product.Update(obj);
+                    _unitOfWork.Save();
+                    TempData["success"] = "Product Edited successfully";
                 }
-               
+
                 return RedirectToAction("Index");
             }
             return View();
@@ -73,26 +74,26 @@ namespace PageTurners.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            Category? categoryFromDb = _unitOfWork.Category.Get(u => u.Id == id);
+            Product? productFromDb = _unitOfWork.Product.Get(u => u.Id == id);
 
-            if (categoryFromDb == null)
+            if (productFromDb == null)
             {
                 return NotFound();
             }
-            return View(categoryFromDb);
+            return View(productFromDb);
         }
 
         [HttpPost, ActionName("Delete")]
         public IActionResult Remove(int? id)
         {
-            Category? obj = _unitOfWork.Category.Get(u => u.Id == id);
+            Product? obj = _unitOfWork.Product.Get(u => u.Id == id);
             if (obj == null)
             {
                 return NotFound();
             }
-            _unitOfWork.Category.Remove(obj);
+            _unitOfWork.Product.Remove(obj);
             _unitOfWork.Save();
-            TempData["success"] = "Category deleted successfully";
+            TempData["success"] = "Product deleted successfully";
             return RedirectToAction("Index");
         }
     }

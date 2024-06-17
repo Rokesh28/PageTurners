@@ -15,7 +15,7 @@ namespace PageTurners.DataAccess.Repository
             _db = db;
 		}
 
-        public void update(Category category)
+        public void Update(Category category)
         {
             _db.Categories.Update(category);
         }

@@ -4,7 +4,8 @@ namespace PageTurners.DataAccess.Repository.IRepository
 	public interface IUnitOfWork
 	{
 		ICategoryRepository Category { get; }
-		void Save();
+        IProductRepository Product { get; }
+        void Save();
 	}
 }
 
