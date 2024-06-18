@@ -24,13 +24,13 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.18" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PageTurners.DataAccess\PageTurners.DataAccess.csproj">
-      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
-    </ProjectReference>
     <ProjectReference Include="..\PageTurners.Utility\PageTurners.Utility.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
     <ProjectReference Include="..\PageTurners.Models\PageTurners.Models.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\PageTurners.DataAccess\PageTurners.DataAccess.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
   </ItemGroup>

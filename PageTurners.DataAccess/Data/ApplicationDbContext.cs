@@ -1,11 +1,14 @@
 ﻿using System;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using PageTurners.Models;
 
+
 namespace PageTurners.DataAccess.Data
 {
-	public class ApplicationDbContext: DbContext
-	{
+    public class ApplicationDbContext : IdentityDbContext<IdentityUser>
+    {
 		public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options):base(options)
 		{
 
@@ -15,6 +18,7 @@ namespace PageTurners.DataAccess.Data
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductImage> ProductImages { get; set; }
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
