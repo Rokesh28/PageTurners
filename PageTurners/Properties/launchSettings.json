@@ -36,7 +36,7 @@
     "PageTurners": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:30081;http://localhost:30959",
+      "applicationUrl": "https://localhost:22778;http://localhost:28636",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

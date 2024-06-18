@@ -29,8 +29,8 @@ namespace PageTurners.Areas.Admin.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            List<Product> categories = _unitOfWork.Product.GetAll().ToList();
-            return View(categories);
+            //List<Product> products = _unitOfWork.Product.GetAll().ToList();
+            return View();
         }
 
         public IActionResult CreateOrEdit(int? id = 0)
