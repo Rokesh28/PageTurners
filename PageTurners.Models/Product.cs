@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-//using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System.Xml.Linq;
 
 namespace PageTurners.Models
@@ -40,11 +40,11 @@ namespace PageTurners.Models
 
         public int CategoryId { get; set; }
         [ForeignKey("CategoryId")]
-        //[ValidateNever]
+        [ValidateNever]
         public Category Category { get; set; }
 
-        //[ValidateNever]
-        //public List<ProductImage> ProductImages { get; set; }
+        [ValidateNever]
+        public List<ProductImage> ProductImages { get; set; }
     }
 }
 
