@@ -10,12 +10,14 @@ namespace PageTurners.DataAccess.Repository
         public ICategoryRepository Category { get; private set; }
         public IProductRepository Product { get; private set; }
         public IProductImageRepository ProductImage { get; private set; }
+        public ICompanyRepository Company { get; private set; }
         public UnitOfWork(ApplicationDbContext dbContext)
 		{
             _db = dbContext;
             Category = new CategoryRepository(_db);
             Product = new ProductRepository(_db);
             ProductImage = new ProductImageRepository(_db);
+            Company = new CompanyRepository(_db);
 
         }
           

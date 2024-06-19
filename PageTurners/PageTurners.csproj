@@ -44,6 +44,7 @@
     <None Remove="Areas\Admin\Views\" />
     <None Remove="Areas\Customer\Views\Home\" />
     <None Remove="Areas\Admin\Views\Product\" />
+    <None Remove="Areas\Admin\Views\Company\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\" />
@@ -55,5 +56,6 @@
     <Folder Include="Areas\Admin\Views\" />
     <Folder Include="Areas\Customer\Views\Home\" />
     <Folder Include="Areas\Admin\Views\Product\" />
+    <Folder Include="Areas\Admin\Views\Company\" />
   </ItemGroup>
 </Project>
