@@ -23,6 +23,7 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.18" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.18" />
     <PackageReference Include="Stripe.net" Version="44.13.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="7.0.19" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PageTurners.Utility\PageTurners.Utility.csproj">
@@ -48,6 +49,9 @@
     <None Remove="Areas\Admin\Views\Company\" />
     <None Remove="Areas\Customer\Views\Cart\" />
     <None Remove="Areas\Admin\Views\Order\" />
+    <None Remove="ViewComponents\" />
+    <None Remove="Views\Shared\Components\" />
+    <None Remove="Views\Shared\Components\ShoppingCart\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\" />
@@ -62,5 +66,8 @@
     <Folder Include="Areas\Admin\Views\Company\" />
     <Folder Include="Areas\Customer\Views\Cart\" />
     <Folder Include="Areas\Admin\Views\Order\" />
+    <Folder Include="ViewComponents\" />
+    <Folder Include="Views\Shared\Components\" />
+    <Folder Include="Views\Shared\Components\ShoppingCart\" />
   </ItemGroup>
 </Project>
