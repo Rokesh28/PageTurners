@@ -7,6 +7,10 @@ namespace PageTurners.DataAccess.Repository.IRepository
         IProductRepository Product { get; }
 		IProductImageRepository ProductImage { get; }
         ICompanyRepository Company { get; }
+        IShoppingCartRepository ShoppingCart { get; }
+        IApplicationUserRepository ApplicationUser { get; }
+        IOrderDetailRepository OrderDetail { get; }
+        IOrderHeaderRepository OrderHeader { get; }
         void Save();
 	}
 }

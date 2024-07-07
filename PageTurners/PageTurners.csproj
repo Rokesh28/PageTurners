@@ -22,6 +22,7 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.12" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.18" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.18" />
+    <PackageReference Include="Stripe.net" Version="44.13.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PageTurners.Utility\PageTurners.Utility.csproj">
@@ -45,6 +46,8 @@
     <None Remove="Areas\Customer\Views\Home\" />
     <None Remove="Areas\Admin\Views\Product\" />
     <None Remove="Areas\Admin\Views\Company\" />
+    <None Remove="Areas\Customer\Views\Cart\" />
+    <None Remove="Areas\Admin\Views\Order\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\" />
@@ -57,5 +60,7 @@
     <Folder Include="Areas\Customer\Views\Home\" />
     <Folder Include="Areas\Admin\Views\Product\" />
     <Folder Include="Areas\Admin\Views\Company\" />
+    <Folder Include="Areas\Customer\Views\Cart\" />
+    <Folder Include="Areas\Admin\Views\Order\" />
   </ItemGroup>
 </Project>
