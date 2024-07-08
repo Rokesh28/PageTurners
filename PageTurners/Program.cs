@@ -24,7 +24,7 @@ builder.Services.AddControllersWithViews();
 
 ////for production use - using sqlserver:
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer("Server=tcp:rokzsql.database.windows.net,1433;Initial Catalog=PageTurner;Persist Security Info=False;User ID=sqladmin;Password={your_password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"));
+    options.UseSqlServer("Server=tcp:rokzsql.database.windows.net,1433;Initial Catalog=PageTurner;Persist Security Info=False;User ID=sqladmin;Password=Rokzsql@28;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"));
 
 builder.Services.AddIdentity<IdentityUser,IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
 builder.Services.Configure<StripeSettings>(builder.Configuration.GetSection("Stripe"));
