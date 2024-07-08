@@ -54,7 +54,7 @@ namespace PageTurners.DataAccess.DbInitializer
                     // Create admin user
                     var adminUser = new ApplicationUser
                     {
-                        UserName = "Rokesh",
+                        UserName = "rokesh2897@gmail.com",
                         Email = "rokesh2897@gmail.com",
                         Name = "Rokesh Prakash",
                         PhoneNumber = "9898945345",
