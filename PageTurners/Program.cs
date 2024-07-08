@@ -6,14 +6,26 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using PageTurners.Utility;
 using Stripe;
+using PageTurners.DataAccess.DbInitializer;
+using DotNetEnv;
 
 var builder = WebApplication.CreateBuilder(args);
 
+DotNetEnv.Env.Load();
+//test
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"), new MySqlServerVersion(new Version(8, 0, 37))));
-//commented signin confiormation 
-//builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ApplicationDbContext>();
+
+
+//for development use in mac - mysql
+//var connectionString = Environment.GetEnvironmentVariable("DEFAULT_CONNECTION_DEV");
+//builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseMySql(connectionString , new MySqlServerVersion(new Version(8, 0, 37))));
+
+
+////for production use - using sqlserver:
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(Environment.GetEnvironmentVariable("DEFAULT_CONNECTION_LIVE")));
+
 builder.Services.AddIdentity<IdentityUser,IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
 builder.Services.Configure<StripeSettings>(builder.Configuration.GetSection("Stripe"));
 builder.Services.ConfigureApplicationCookie(options => {
@@ -23,8 +35,8 @@ builder.Services.ConfigureApplicationCookie(options => {
 });
 
 builder.Services.AddAuthentication().AddFacebook(option => {
-    option.AppId = "450280304575618";
-    option.AppSecret = "54d1b474722823411362fb659138c2c1";
+    option.AppId = Environment.GetEnvironmentVariable("FACEBOOK_API_ID");
+    option.AppSecret = Environment.GetEnvironmentVariable("FACEBOOK_APP_SECRET");
 });
 
 builder.Services.AddDistributedMemoryCache();
@@ -38,6 +50,7 @@ builder.Services.AddSession(options => {
 builder.Services.AddRazorPages();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IEmailSender, EmailSender>();
+builder.Services.AddScoped<IDbInitializer, DbInitializer>();
 
 var app = builder.Build();
 
@@ -57,11 +70,20 @@ app.UseRouting();
 app.UseAuthentication(); 
 app.UseAuthorization();
 app.UseSession();
-
+SeedDatabase();
 app.MapRazorPages();
 app.MapControllerRoute(
     name: "default",
     pattern: "{area=Customer}/{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+void SeedDatabase()
+{
+    using (var scope = app.Services.CreateScope())
+    {
+        var dbInitializer = scope.ServiceProvider.GetRequiredService<IDbInitializer>();
+        dbInitializer.Initialize();
+    }
+}
 

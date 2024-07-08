@@ -13,7 +13,7 @@ using Stripe;
 using Stripe.Checkout;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
+//test comment1
 namespace PageTurners.Areas.Admin.Controllers
 {
     [Area("Admin")]
