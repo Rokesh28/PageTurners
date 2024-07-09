@@ -38,6 +38,10 @@ builder.Services.AddAuthentication().AddFacebook(option => {
     option.AppId = Environment.GetEnvironmentVariable("FACEBOOK_API_ID");
     option.AppSecret = Environment.GetEnvironmentVariable("FACEBOOK_APP_SECRET");
 });
+builder.Services.AddAuthentication().AddMicrosoftAccount(option => {
+    option.ClientId = Environment.GetEnvironmentVariable("MICROSOFT_CLIENT_ID");
+    option.ClientSecret = Environment.GetEnvironmentVariable("MICROSOFT_APP_SECRET");
+});
 
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options => {
