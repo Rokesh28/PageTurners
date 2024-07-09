@@ -53,20 +53,20 @@
                                         <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Register">Create User</a>
                                     </li>
                                     <li class="nav-item">
-                                    <a class="dropdown-item" asp-area="Admin" asp-controller="User" asp-action="Index">Manage User</a>
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="User" asp-action="Index">Manage User</a>
                                     </li>
 
                                 </ul>
                             </li>
                         }
-                    <li class="nav-item">
-                        <a class="nav-link" asp-area="Customer" asp-controller="Cart" asp-action="Index">
-                            @await Component.InvokeAsync("ShoppingCart")
-                        </a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="Customer" asp-controller="Cart" asp-action="Index">
+                                @await Component.InvokeAsync("ShoppingCart")
+                            </a>
+                        </li>
 
                     </ul>
-                    <partial name ="_LoginPartial" />
+                    <partial name="_LoginPartial" />
                 </div>
             </div>
         </nav>
@@ -83,12 +83,13 @@
             Developed with <i class="bi bi-heart-fill"></i> by Rokesh Prakash ~ &copy; 2024 - PageTurners
         </div>
         @*<div class="container mt-10">
-            &copy; 2024 - PageTurners - <a asp-area="Customer" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>*@
+                &copy; 2024 - PageTurners - <a asp-area="Customer" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>*@
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.tiny.cloud/1/yue4dsrqe30ucdftmnd7cf10edxjimffjtyqbwdiymkju2qa/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="//cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js" asp-append-version="true"></script>
