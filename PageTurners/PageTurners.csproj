@@ -53,6 +53,7 @@
     <None Remove="ViewComponents\" />
     <None Remove="Views\Shared\Components\" />
     <None Remove="Views\Shared\Components\ShoppingCart\" />
+    <None Remove="Areas\Admin\Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\" />
@@ -70,5 +71,6 @@
     <Folder Include="ViewComponents\" />
     <Folder Include="Views\Shared\Components\" />
     <Folder Include="Views\Shared\Components\ShoppingCart\" />
+    <Folder Include="Areas\Admin\Views\User\" />
   </ItemGroup>
 </Project>
