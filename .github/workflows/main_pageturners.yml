@@ -49,19 +49,19 @@ jobs:
         with:
           name: .net-app
       
-      - name: Login to Azure
-        uses: azure/login@v1
-        with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_E1D5273C79C24367AF08210944B05050 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_0731E1DD2B6F4800AD6412CAC494FD41 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_44223C306AFE4CFEBB1D444E97EC87D1 }}
+      # - name: Login to Azure
+      #   uses: azure/login@v1
+      #   with:
+      #     client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_E1D5273C79C24367AF08210944B05050 }}
+      #     tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_0731E1DD2B6F4800AD6412CAC494FD41 }}
+      #     subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_44223C306AFE4CFEBB1D444E97EC87D1 }}
 
-      - name: Deploy to Azure Web App
-        id: deploy-to-webapp
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: 'PageTurners'
-          slot-name: 'Production'
-          package: .
+      # - name: Deploy to Azure Web App
+      #   id: deploy-to-webapp
+      #   uses: azure/webapps-deploy@v2
+      #   with:
+      #     app-name: 'PageTurners'
+      #     slot-name: 'Production'
+      #     package: .
           
 
