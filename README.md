@@ -15,7 +15,7 @@ PageTurners is a full-stack e-commerce web app designed for a smooth and secure 
 
 - **Frontend:** ASP.NET Core MVC, Razor Pages, Bootstrap v5
 - **Backend:** .NET 8, Entity Framework Core
-- **Database:** Microsoft SQL Server
+- **Database:** Microsoft SQL Server (deployed via Azure SQL Database for production)
 - **Payments:** Stripe Integration
 - **Email:** SendGrid (Order Confirmation Emails)
 - **Hosting:** Azure Web Apps
