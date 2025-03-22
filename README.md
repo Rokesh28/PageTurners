@@ -56,6 +56,6 @@ Feel free to reach out with questions or suggestions:
 
 ---
 
-> Built with ❤️ and Entity Framework by [Rokesh Prakash](https://github.com/Rokesh28)
+> Built with ❤️ by [Rokesh Prakash](https://github.com/Rokesh28)
 
 
